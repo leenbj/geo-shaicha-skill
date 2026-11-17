@@ -11,7 +11,7 @@
 ## 1. 预处理
 
 ```bash
-cd ~/.agents/skills/geo-shaicha
+cd ~/.agents/skills/geo-shaicha-skill
 
 python3 scripts/prepare.py --xlsx /path/表.xlsx --sheet Sheet1
 ```

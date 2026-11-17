@@ -1,5 +1,5 @@
 ---
-name: geo-shaicha
+name: geo-shaicha-skill
 description: 批量检测「中文域名（.网址）」在 AI 助手中的可见度。用户给一张含「域名 / 公司名称」的 Excel，脚本用 ego-browser 依次在豆包、DeepSeek、千问、元宝提问「XX的官网是什么？」，判断回答里是否出现 .网址（含豆包把点渲染成「。」的情况），命中则截图存进 案例截图/<域名>/，并把结果、命中平台、截图路径、引用来源媒体回写表格。Use when the user asks 检测/统计 .网址 在 AI 回答中的出现概率、AI 可见度、AI 引用来源，或提到豆包/DeepSeek/千问/元宝批量提问统计。
 metadata:
   version: "1.0.0"
@@ -67,7 +67,7 @@ python3 scripts/prepare.py --xlsx 表.xlsx --sheet Sheet1
 
 ```bash
 ego-browser nodejs <<'EOF'
-const task = await taskSpace("geo-shaicha");
+const task = await taskSpace("geo-shaicha-skill");
 const p1 = task.page("p1");   // 豆包
 await p1.goto("https://www.doubao.com/chat/");
 const p2 = await task.newPage(); await p2.goto("https://chat.deepseek.com/");
